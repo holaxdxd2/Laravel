@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TallerController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CursosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,10 +23,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/curso/{dato1}/{dato2}',[CursoController::class,'hola'])->name('curso.show');
+// Route::get('/curso/{dato1}/{dato2}',[CursoController::class,'hola'])->name('curso.show');
 Route::get('/primo/{numero}', [TallerController::class, 'esPrimo'])->name('curso.esPrimo');
-Route::get('/curso',[CursoController::class,'create']);
-Route::post('/curso',[CursoController::class,'store'])->name('curso.store');
+// Route::get('/curso',[CursoController::class,'create']);
+// Route::post('/curso',[CursoController::class,'store'])->name('curso.store');
 
 Route::get('/tallerprimo', [TallerController::class, 'create']);
 Route::post('/tallerprimo', [TallerController::class, 'store'])->name('taller.store');
@@ -50,3 +51,9 @@ Route::post('/producto', [ProductController::class, 'productStore'])->name('prod
 
 Route::get('/primo', [PrimoController::class, 'primoCreate']);
 Route::post('/primo', [PrimoController::class, 'primoStore'])->name('calcular.primo');
+
+Route::get('cursos/create',[CursosController::class,'create']);
+Route::post('cursos/store', [CursosController::class,'store'])->name('curso.store');
+Route::get('cursos/listar',[CursosController::class,'index'])->name('curso.index');
+Route::delete('cursos/{curso}',[CursosController::class,'destroy'])->name('curso.destroy');
+Route::get('cursos/{curso}',[CursosController::class,'show'])->name('curso.show');
