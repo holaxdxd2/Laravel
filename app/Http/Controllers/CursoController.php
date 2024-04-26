@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Models\Profile;
 
 class CursoController extends Controller
 {
 
+public function index(){
 
+    $temp=Profile::find(1);
+    return $temp->user;
+}
 public function create(){
 
 

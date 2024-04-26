@@ -52,7 +52,7 @@ Route::post('/producto', [ProductController::class, 'productStore'])->name('prod
 Route::get('/primo', [PrimoController::class, 'primoCreate']);
 Route::post('/primo', [PrimoController::class, 'primoStore'])->name('calcular.primo');
 
-Route::get('cursos/create',[CursosController::class,'create']);
+Route::get('cursos/create',[CursosController::class,'create'])->name('curso.create');
 Route::post('cursos/store', [CursosController::class,'store'])->name('curso.store');
 Route::get('cursos/listar',[CursosController::class,'index'])->name('curso.index');
 
