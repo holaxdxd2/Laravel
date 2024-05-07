@@ -48,4 +48,7 @@ class User extends Authenticatable
         //return $this->hasOne('App\Models\Profile','foreing_key','local_key');
         return $this->hasOne('App\Models\Profile');
 }
+public function roles(){
+    return $this->belongsToMany('App\Models\Role'); 
+}
 }
