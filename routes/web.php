@@ -4,9 +4,11 @@ use App\Http\Controllers\CursoController;
 use App\Http\Controllers\PrimoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TallerController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CursosController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +62,11 @@ Route::delete('cursos/{curso}',[CursosController::class,'destroy'])->name('curso
 Route::get('cursos/{curso}',[CursosController::class,'show'])->name('curso.show');
 Route::put('cursos/{curso}',[CursosController::class,'update'])->name('curso.update');
 Route::get('cursos/{curso}/editar',[CursosController::class,'edit'])->name('curso.edit');
+
+
+Route::get('/app', function () {
+    return view('notice.info');
+});
+
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/home', [HomeController::class, 'index'])->name('app');
